@@ -21,14 +21,14 @@ const Home = () => {
             {HomePageTexts.map((t) => {
               return (
                 <div
-                  className="  hover:scale-125 parent-div relative w-4/5  overflow-hidden hover:text-white  cursor-pointer  text-[60px] md:text-[80px] 3xl:text-[120px]  font-bold leading-[0.8] duration-1000  transition-all "
+                  className="  hover:scale-125 parent-div relative w-4/5  overflow-hidden hover:text-black  cursor-pointer  text-[60px] md:text-[80px] 3xl:text-[120px]  font-bold leading-[0.8] duration-1000  transition-all "
                   key={t.id}
                 >
                   <h1 className="z-10 relative">{t.text}</h1>
-                  <div className="background-fill absolute top-0 left-0 h-full z-0 w-0  bg-blue-600   duration-1000 transition-all " />
+                  <div className="background-fill absolute top-0 left-0 h-full z-0 w-0  bg-green-600     duration-1000 transition-all " />
                   <BsArrowDown
                     size={48}
-                    className=" absolute  hidden  arrow-icon    z-20    text-white  "
+                    className=" absolute  hidden  arrow-icon    z-20    text-black  "
                   />
                 </div>
               );
@@ -37,6 +37,7 @@ const Home = () => {
           <HomeText />
         </div>
       </div>
+
       <h1 className="w-[1152px] h-60 mx-auto  font-bold text-[200px] text-center">
         <NameOfTheWebsite />
       </h1>
