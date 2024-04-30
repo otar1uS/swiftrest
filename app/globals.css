@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: black;
-  color: white;
-}
-
 .parent-div:hover .background-fill {
   width: 100%;
 }

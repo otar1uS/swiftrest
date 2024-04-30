@@ -10,18 +10,13 @@ const Home = () => {
   return (
     <div className="h-screen w-full flex flex-col justify-between">
       <div className="flex flex-col gap-20">
-        <div className="flex justify-between items-center mt-12 mx-12">
-          <Logo />
-          <h1 className="cursor-pointer scale-100 duration-500 hover:scale-125 hover:text-blue-600">
-            +995595111111111
-          </h1>
-        </div>
+        <div></div>
         <div className="max-w-[1600px] h-[300px] flex mx-auto">
           <div className="w-2/3 h-[300px]  flex items-start justify-around flex-col">
             {HomePageTexts.map((t) => {
               return (
                 <div
-                  className="  hover:scale-125 parent-div relative w-4/5  overflow-hidden hover:text-black  cursor-pointer  text-[60px] md:text-[80px] 3xl:text-[120px]  font-bold leading-[0.8] duration-1000  transition-all "
+                  className="  hover:scale-125 parent-div relative w-4/5  overflow-hidden text-white hover:text-black  cursor-pointer  text-[60px] md:text-[80px] 3xl:text-[120px]  font-bold leading-[0.8] duration-1000  transition-all "
                   key={t.id}
                 >
                   <h1 className="z-10 relative">{t.text}</h1>

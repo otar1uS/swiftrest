@@ -5,10 +5,10 @@ export const HomePageTexts: HomePageTextTypes[] = [
   },
   {
     id: 2,
-    text: "CONTACT",
+    text: "ABOUT",
   },
   {
     id: 3,
-    text: "ABOUT",
+    text: "CONTACT",
   },
 ];

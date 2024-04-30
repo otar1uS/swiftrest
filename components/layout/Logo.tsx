@@ -22,42 +22,44 @@ const Logo = () => {
   };
 
   return (
-    <div
-      className="relative w-[112px] h-[112px] flex justify-center items-center cursor-pointer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="w-[112px] z-[200] h-[112px] fixed top-8 left-10">
       <div
-        className={`flex items-center ${
-          showLogos ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-500`}
+        className="relative w-full h-full flex justify-center items-center cursor-pointer"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div
-          className={`transform transition-transform ${
-            showLogos ? "translate-x-0" : "-translate-x-8"
+          className={`flex items-center ${
+            showLogos ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-500`}
+        >
+          <div
+            className={`transform transition-transform ${
+              showLogos ? "translate-x-0" : "-translate-x-8"
+            }`}
+          >
+            <Image src={logo1} width={31} height={48} alt="logo" />
+          </div>
+          <div
+            className={`transform translate-y-[7px] transition-transform ${
+              showLogos ? "-translate-x-[7px]" : "translate-x-8"
+            }`}
+          >
+            <Image src={logo2} width={24} height={34} alt="logo" />
+          </div>
+        </div>
+        <h1
+          className={`transform text-white dark:text-white transition-transform duration-1000 ${
+            showHomeText ? "block" : "hidden"
+          } ${
+            showLogos
+              ? "translate-y-20 absolute top-10"
+              : "translate-y-0 absolute top-10"
           }`}
         >
-          <Image src={logo1} width={31} height={48} alt="logo" />
-        </div>
-        <div
-          className={`transform translate-y-[7px] transition-transform ${
-            showLogos ? "-translate-x-[7px]" : "translate-x-8"
-          }`}
-        >
-          <Image src={logo2} width={24} height={34} alt="logo" />
-        </div>
+          HOME
+        </h1>
       </div>
-      <h1
-        className={`transform transition-transform duration-1000 ${
-          showHomeText ? "block" : "hidden"
-        } ${
-          showLogos
-            ? "translate-y-20 absolute top-10"
-            : "translate-y-0 absolute top-10"
-        }`}
-      >
-        HOME
-      </h1>
     </div>
   );
 };

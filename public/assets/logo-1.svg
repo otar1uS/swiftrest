@@ -4,5 +4,5 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M31 14 24 0 0 48h14l17-34Z" fill="#000" />
+          <path d="M31 14 24 0 0 48h14l17-34Z" fill="cyan" />
         </svg>
