@@ -10,9 +10,9 @@ const Contact = () => {
         We sell soap worldwide with the guarantee of prison contact us right
         away
       </h2>
-      <div className=" z-[100] left-[50%]  -translate-x-[50%] absolute  max-w-[1200px]  flex-col   lg:flex-row   h-screen flex justify-between items-center">
-        <ContactForm />
+      <div className=" z-[100] left-[50%]  -translate-x-[50%] absolute  min-w-[400px] lg:min-w-[1200px]  flex-col   lg:flex-row   h-screen flex justify-between items-center">
         <Globe />
+        <ContactForm />
       </div>
       <BackgroundBeams className="bg-black" />
     </div>

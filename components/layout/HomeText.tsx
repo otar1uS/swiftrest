@@ -8,7 +8,7 @@ with our creative expertise.`;
 
 export function HomeText() {
   return (
-    <div className="w-1/3  flex-col flex justify-center gap-10 items-center">
+    <div className=" sm:w-1/3    flex-col flex justify-center gap-20 items-center">
       <TextGenerateEffect words={words} />
       <RotatingBox />
     </div>

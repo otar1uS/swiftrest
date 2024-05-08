@@ -22,7 +22,7 @@ const Logo = () => {
   };
 
   return (
-    <div className="w-[112px] z-[200] h-[112px] fixed top-8 left-10">
+    <div className="hidden sm:block w-[112px] z-[700] h-[112px] fixed top-8 left-10">
       <div
         className="relative w-full h-full flex justify-center items-center cursor-pointer"
         onMouseEnter={handleMouseEnter}
@@ -48,8 +48,9 @@ const Logo = () => {
             <Image src={logo2} width={24} height={34} alt="logo" />
           </div>
         </div>
+
         <h1
-          className={`transform text-white dark:text-white transition-transform duration-1000 ${
+          className={`transform text-cyan-600  font-bold transition-transform duration-1000 ${
             showHomeText ? "block" : "hidden"
           } ${
             showLogos
