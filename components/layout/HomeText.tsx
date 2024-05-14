@@ -1,15 +1,15 @@
 "use client";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import RotatingBox from "./RotatingBox";
 
-const words = ` Elevating Digital Excellence. We specialize in web design,
-development, UI/UX, and product design. Transform your online presence
-with our creative expertise.`;
+import RotatingBox from "./RotatingBox";
 
 export function HomeText() {
   return (
     <div className=" sm:w-1/3    flex-col flex justify-center gap-20 items-center">
-      <TextGenerateEffect words={words} />
+      <h1 className="font-bold text-[16px] sm:text-[20px] text-white">
+        Elevating Digital Excellence. We specialize in web design, development,
+        UI/UX, and product design. Transform your online presence with our
+        creative expertise.
+      </h1>
       <RotatingBox />
     </div>
   );

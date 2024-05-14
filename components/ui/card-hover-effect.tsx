@@ -1,6 +1,6 @@
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -10,7 +10,7 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    icon: React.ReactNode;
   }[];
   className?: string;
 }) => {
@@ -31,9 +31,8 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
+        <div
+          key={item?.title}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -56,10 +55,13 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
+            <CardTitle className="flex flex-col   gap-5">
+              {item.title}
+              <div>{item.icon}</div>
+            </CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </Link>
+        </div>
       ))}
     </motion.div>
   );
@@ -93,7 +95,9 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn("text-zinc-100 font-bold tracking-wide mt-4 ", className)}
+    >
       {children}
     </h4>
   );

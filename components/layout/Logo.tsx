@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo1 from "../../public/assets/logo-1.svg";
 import logo2 from "../../public/assets/logo-2.svg";
 import Image from "next/image";
-
+import { Link } from "react-scroll";
 const Logo = () => {
   const [showLogos, setShowLogos] = useState(false);
   const [showHomeText, setShowHomeText] = useState(true);
@@ -22,7 +22,12 @@ const Logo = () => {
   };
 
   return (
-    <div className="hidden sm:block w-[112px] z-[700] h-[112px] fixed top-8 left-10">
+    <Link
+      to="HOME"
+      smooth={true}
+      duration={1000}
+      className="hidden sm:block w-[112px] z-[700] h-[112px] fixed top-8 left-10"
+    >
       <div
         className="relative w-full h-full flex justify-center items-center cursor-pointer"
         onMouseEnter={handleMouseEnter}
@@ -58,10 +63,10 @@ const Logo = () => {
               : "translate-y-0 absolute top-10"
           }`}
         >
-          HOME
+          SWIFTREST
         </h1>
       </div>
-    </div>
+    </Link>
   );
 };
 
