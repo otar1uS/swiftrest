@@ -26,6 +26,7 @@ export default function About() {
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{
           delay: 0.3,
           duration: 0.8,
@@ -38,6 +39,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{
           delay: 0.8,
           duration: 1,

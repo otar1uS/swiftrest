@@ -397,12 +397,6 @@ export default function Globe() {
   return (
     <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-transparent  relative w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-        <div>
-          <h2 className="text-center opacity-0 text-xl md:text-4xl font-bold text-black dark:text-white">
-            We sell soap worldwide with the guarantee of prison contact us right
-            away
-          </h2>
-        </div>
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />;
         </div>

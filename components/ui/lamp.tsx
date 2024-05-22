@@ -40,6 +40,7 @@ export const LampContainer = ({
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
+          viewport={{ once: true }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -61,6 +62,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
+          viewport={{ once: true }}
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}

@@ -1,40 +1,12 @@
 // components/Footer.jsx
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Footer = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <motion.footer
-      className="bg-slate-950  text-white py-8"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-    >
+    <footer className="bg-slate-950  text-white py-8">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          variants={containerVariants}
-        >
-          <motion.div variants={itemVariants}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
             <h3 className="text-lg font-bold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
@@ -53,8 +25,8 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </motion.div>
-          <motion.div variants={itemVariants}>
+          </div>
+          <div>
             <h3 className="text-lg font-bold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
@@ -73,8 +45,8 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </motion.div>
-          <motion.div variants={itemVariants}>
+          </div>
+          <div>
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <ul className="space-y-2">
               <li>
@@ -108,21 +80,15 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          className="mt-8 border-t border-gray-700 pt-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
+          </div>
+        </div>
+        <div className="mt-8 border-t border-gray-700 pt-8 text-center">
           <p>
             &copy; {new Date().getFullYear()} SWIFTREST. All rights reserved.
           </p>
-        </motion.div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 

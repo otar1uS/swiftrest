@@ -4,17 +4,24 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/utils/cn";
 import { Textarea } from "../ui/textarea";
-
+import sender from "../action/SendData";
 
 export function ContactForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit =async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    const formData = {
+      firstname: e.currentTarget.firstname.value,
+      lastname: e.currentTarget.lastname.value,
+      email: e.currentTarget.email.value,
+      text: e.currentTarget.textarea.value,
+      number: e.currentTarget.number.value,
+    };
+
+    await   sender(formData as any );
   };
   return (
-    <div
-      className="max-w-md w-full mx-auto  md:rounded-2xl p-4 md:p-8 shadow-input rounded-md bg-white dark:bg-black"
-    >
+    <div className="max-w-md w-full mx-auto  md:rounded-2xl p-4 md:p-8 shadow-input rounded-md bg-white dark:bg-black">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
