@@ -8,20 +8,26 @@ import Contact from "@/components/pages/Contact";
 import Logo from "@/components/layout/Logo";
 import About from "@/components/pages/About";
 import Footer from "@/components/pages/Footer";
+import LanguageChanger from "@/components/layout/LangaugeChange";
+import { TranslationProvider } from "@/components/context/TranslateState";
 
 const App = () => {
   return (
     <div className="relative  overflow-x-hidden w-full h-full">
-      <Navbar />
+      <TranslationProvider>
+        <Navbar />
 
-      <Logo />
-      <Home />
+        <Logo />
 
-      <Services />
-      <About />
+        <LanguageChanger />
+        <Home />
 
-      <Contact />
-      <Footer />
+        <Services />
+        <About />
+
+        <Contact />
+        <Footer />
+      </TranslationProvider>
     </div>
   );
 };

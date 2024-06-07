@@ -6,7 +6,7 @@ export function NameOfTheWebsite() {
   return (
     <div className="h-[20rem] w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-transparent   dark:white bg-gradient-to-r bg-clip-text from-cyan-500 to-blue-500 relative z-20">
-        SWIFTREST
+        SWIFTSPACE
       </h1>
       <div className="w-[40rem] h-40 relative">
         {/* Gradients */}

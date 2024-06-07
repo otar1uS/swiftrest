@@ -63,7 +63,7 @@ const Logo = () => {
               : "translate-y-0 absolute top-10"
           }`}
         >
-          SWIFTREST
+          SWIFTSPACE
         </h1>
       </div>
     </Link>

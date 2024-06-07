@@ -1,13 +1,15 @@
-"use client";
 import React from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/utils/cn";
-import { Textarea } from "../ui/textarea";
+
 import sender from "../action/SendData";
+import { useTranslation } from "../context/TranslateState";
 
 export function ContactForm() {
-  const handleSubmit =async (e: React.FormEvent<HTMLFormElement>) => {
+  const { locale } = useTranslation();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = {
@@ -18,44 +20,63 @@ export function ContactForm() {
       number: e.currentTarget.number.value,
     };
 
-    await   sender(formData as any );
+    await sender(formData as any);
   };
+
+  const renderFormField = (
+    label: string,
+    placeholder: string,
+    id: string,
+    type: string
+  ) => {
+    return (
+      <LabelInputContainer className="mb-4">
+        <Label htmlFor={id}>{label}</Label>
+        <Input id={id} placeholder={placeholder} type={type} />
+      </LabelInputContainer>
+    );
+  };
+
   return (
-    <div className="max-w-md w-full mx-auto  md:rounded-2xl p-4 md:p-8 shadow-input rounded-md bg-white dark:bg-black">
+    <div className="max-w-md w-full mx-auto md:rounded-2xl p-4 md:p-8 shadow-input rounded-md bg-white dark:bg-black">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-          <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
-          </LabelInputContainer>
-          <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
-          </LabelInputContainer>
+          {renderFormField(
+            locale === "en" ? "First name" : "სახელი",
+            locale === "en" ? "Tyler" : "შოთა",
+            "firstname",
+            "text"
+          )}
+          {renderFormField(
+            locale === "en" ? "Last name" : "გვარი",
+            locale === "en" ? "Durden" : "რუსთაველი",
+            "lastname",
+            "text"
+          )}
         </div>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="text">Text</Label>
-          <Textarea
-            placeholder="Type your message here."
-            id="textarea"
-            className="text-black "
-          />
-        </LabelInputContainer>
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="text">Number</Label>
-
-          <Input id="number" placeholder="number..." type="number" />
-        </LabelInputContainer>
-
+        {renderFormField(
+          locale === "en" ? "Email Address" : "ელფოსტის მისამართი",
+          "projectmayhem@fc.com",
+          "email",
+          "email"
+        )}
+        {renderFormField(
+          locale === "en" ? "Text" : "შეტყობინება",
+          locale === "en" ? "Hello ,I want to ..." : "გამარჯობა ,მსურს..",
+          "textarea",
+          "text"
+        )}
+        {renderFormField(
+          locale === "en" ? "Number" : "ტელეფონის ნომერი",
+          "+995555555",
+          "number",
+          "number"
+        )}
         <button
           className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
         >
-          SEND &rarr;
+          {locale === "en" ? "SEND &rarr;" : "გაგზავნა"}
           <BottomGradient />
         </button>
       </form>

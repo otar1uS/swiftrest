@@ -8,7 +8,6 @@ import {
   IconDeviceAnalytics,
   IconHeartHandshake,
   IconRocket,
-  IconTruckDelivery,
   IconUsers,
 } from "@tabler/icons-react";
 
@@ -16,8 +15,59 @@ import { Meteors } from "../ui/meteors";
 import Image from "next/image";
 import Section from "../layout/Section";
 import { motion } from "framer-motion";
+import { useTranslation } from "../context/TranslateState";
 
 export default function About() {
+  const { t } = useTranslation();
+
+  const items = [
+    {
+      title: t.SWIFTSPACE.aboutUs.title,
+      description: t.SWIFTSPACE.aboutUs.description,
+      header: (
+        <Image
+          src="/1.jpg"
+          alt="1"
+          width={300}
+          height={300}
+          className="rounded-lg"
+        />
+      ),
+
+      icon: <IconRocket className="h-8 w-8 text-green-500" />,
+    },
+    {
+      title: t.SWIFTSPACE.innovativeSolutionsAndDigitalImaging.title,
+      description:
+        t.SWIFTSPACE.innovativeSolutionsAndDigitalImaging.description,
+      header: (
+        <Image
+          src="/OIG2.jpg"
+          alt="2"
+          width={300}
+          height={300}
+          className="rounded-lg"
+        />
+      ),
+
+      icon: <IconDeviceAnalytics className="h-8 w-8 text-green-500" />,
+    },
+    {
+      title: t.SWIFTSPACE.effectiveCommunication.title,
+      description: t.SWIFTSPACE.effectiveCommunication.description,
+      header: (
+        <Image
+          src="/3.jpg"
+          alt="3"
+          width={300}
+          height={300}
+          className="rounded-lg"
+        />
+      ),
+      icon: <IconBriefcase className="h-8 w-8 text-green-500" />,
+    },
+  ];
+
   return (
     <div
       className="w-full min-h-screen  flex items-center gap-20 flex-col  mx-auto  bg-slate-950"
@@ -34,7 +84,7 @@ export default function About() {
         }}
         className="mt-8  bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
       >
-        <Section name="About Us" />
+        <Section name={t.SWIFTSPACE.aboutUs.title} />
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -49,7 +99,7 @@ export default function About() {
       >
         {items.map((item, index) => {
           return (
-            <div key={index} className="   relative max-w-[360px] h-[550px]">
+            <div key={index} className="   relative max-w-[360px] h-[600px]">
               <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
               <div className="relative  shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-around items-center">
                 {item.header}
@@ -74,98 +124,3 @@ export default function About() {
     </div>
   );
 }
-
-const items = [
-  {
-    title: "Innovative Solutions",
-    description:
-      "We craft cutting-edge solutions to drive your business forward.",
-    header: (
-      <Image
-        src="/1.jpg"
-        alt="1"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-
-    icon: <IconRocket className="h-8 w-8 text-green-500" />,
-  },
-  {
-    title: "Digital Transformation",
-    description:
-      "Embrace the power of technology to stay competitive and agile.",
-    header: (
-      <Image
-        src="/OIG2.jpg"
-        alt="2"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-
-    icon: <IconDeviceAnalytics className="h-8 w-8 text-green-500" />,
-  },
-  {
-    title: "Exceptional Design",
-    description:
-      "Our designs are not only visually stunning but also user-friendly and functional.",
-    header: (
-      <Image
-        src="/3.jpg"
-        alt="3"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-    icon: <IconBriefcase className="h-8 w-8 text-green-500" />,
-  },
-  {
-    title: "Effective Communication",
-    description:
-      "Clear and transparent communication is key to our successful partnerships.",
-    header: (
-      <Image
-        src="/4.jpg"
-        alt="4"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-    icon: <IconUsers className="h-8 w-8 text-cyan-500" />,
-  },
-  {
-    title: "Continuous Improvement",
-    description:
-      "We continuously strive to enhance our expertise and deliver better solutions.",
-    header: (
-      <Image
-        src="/5.jpg"
-        alt="5"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-    icon: <IconHeartHandshake className="h-8 w-8 text-cyan-500" />,
-  },
-  {
-    title: "Cutting-Edge Technology",
-    description:
-      "We embrace the latest technologies to create innovative and scalable solutions.",
-    header: (
-      <Image
-        src="/6.jpg"
-        alt="6"
-        width={300}
-        height={300}
-        className="rounded-lg"
-      />
-    ),
-    icon: <IconCode className="h-8 w-8 text-cyan-500" />,
-  },
-];
