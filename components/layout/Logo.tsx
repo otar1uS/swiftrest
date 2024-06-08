@@ -54,17 +54,19 @@ const Logo = () => {
           </div>
         </div>
 
-        <h1
-          className={`transform text-cyan-600  font-bold transition-transform duration-1000 ${
+        <Image
+          src="/logo.png"
+          alt="logo"
+          width={100}
+          height={100}
+          className={`transform   font-bold transition-transform duration-1000 ${
             showHomeText ? "block" : "hidden"
           } ${
             showLogos
               ? "translate-y-20 absolute top-10"
               : "translate-y-0 absolute top-10"
           }`}
-        >
-          SWIFTSPACE
-        </h1>
+        ></Image>
       </div>
     </Link>
   );

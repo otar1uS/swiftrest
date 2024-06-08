@@ -30,7 +30,7 @@ export default function LanguageChanger() {
   };
 
   return (
-    <div className="language-selector flex items-center space-x-2 w-[140px] h-[40px] z-[5000] bg-white fixed right-10 top-10 shadow-md rounded-full px-3 py-1">
+    <div className="language-selector flex items-center space-x-2 w-[140px] h-[40px] z-[5000] bg-white fixed right-10 top-24 shadow-md rounded-full px-3 py-1">
       <button
         type="button"
         className="flex items-center focus:outline-none rounded-full py-1 px-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"

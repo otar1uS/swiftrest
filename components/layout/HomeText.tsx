@@ -1,11 +1,10 @@
 import { useTranslation } from "../context/TranslateState";
-import RotatingBox from "./RotatingBox";
 
 export function HomeText() {
   const { locale } = useTranslation();
   return (
     <div className="sm:w-1/3 flex-col flex justify-center gap-20 items-center">
-      <h1 className="font-bold text-[16px] sm:text-[20px] text-white">
+      <h1 className="font-[400] text-[18px]  text-white">
         {locale === "en" ? (
           <>
             At SWIFTSPACE we take care and elevate your digital footprint and
@@ -25,7 +24,6 @@ export function HomeText() {
           </>
         )}
       </h1>
-      <RotatingBox />
     </div>
   );
 }

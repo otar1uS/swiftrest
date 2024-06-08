@@ -107,7 +107,7 @@ export default function About() {
                   {item.icon}
                 </div>
 
-                <h1 className="font-bold text-xl text-white mb-4 relative z-50">
+                <h1 className="font-[400] text-xl text-white mb-4 relative z-50">
                   {item.title}
                 </h1>
 
